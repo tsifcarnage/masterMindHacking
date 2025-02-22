@@ -1,0 +1,123 @@
+:root {
+  --green-color: #00ff00;
+}
+/* Global */
+body {
+  background-color: black;
+  color: var(--green-color);
+  font-family: "Courier New", monospace;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Conteneur principal */
+.container {
+  max-width: 90%;
+  width: 400px;
+  margin: auto;
+  border: 2px solid var(--green-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--green-color);
+  animation: blink-border 1s infinite alternate;
+}
+
+/* Animation effet "hacker" */
+@keyframes blink-border {
+  0% {
+    box-shadow: 0 0 10px var(--green-color);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--green-color);
+  }
+}
+
+/* Titres */
+h1 {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+/* Terminal */
+.terminal {
+  font-size: 14px;
+  background: rgba(0, 255, 0, 0.1);
+  padding: 5px;
+  border-left: 3px solid var(--green-color);
+  display: inline-block;
+}
+
+/* Input */
+input {
+  font-size: 18px;
+  padding: 8px;
+  width: 80%;
+  max-width: 200px;
+  text-align: center;
+  background: black;
+  color: var(--green-color);
+  border: 1px solid var(--green-color);
+  border-radius: 5px;
+}
+
+/* Boutons */
+button {
+  font-size: 18px;
+  padding: 8px 15px;
+  background: black;
+  color: var(--green-color);
+  border: 1px solid var(--green-color);
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: var(--green-color);
+  color: black;
+}
+
+button:disabled {
+  background: grey;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Bouton de réinitialisation */
+#retry-btn {
+  background: red;
+  color: white;
+  display: none;
+}
+
+#retry-btn:hover {
+  background: darkred;
+}
+
+/* Feedback */
+#feedback {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Responsive */
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  input {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  button {
+    font-size: 16px;
+    width: 100%;
+  }
+}

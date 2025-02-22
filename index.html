@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hacking Bank</title>
+</head>
+<body>
+    <div class="container">
+        <h1>💻 HACKING EN COURS...</h1>
+        <p class="terminal">Accès au coffre de la banque sécurisé 🔐</p>
+        <p class="terminal">Décrypter le mot de passe...</p>
+        
+        <input type="text" id="guess" placeholder="Entrez un code" maxlength="4">
+        <button id="submit-btn" onclick="checkPassword()">🔓 Décrypter</button>
+
+        <div id="feedback"></div>
+        <p id="attempts">Essais restants : <span id="remaining">10</span></p>
+
+        <button id="retry-btn" onclick="resetGame()" style="display:none;">🔄 Nouvelle tentative</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
