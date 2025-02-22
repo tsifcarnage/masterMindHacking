@@ -89,4 +89,5 @@ function resetGame() {
   document.getElementById("submit-btn").disabled = false;
   document.getElementById("feedback").innerHTML = "";
   document.getElementById("retry-btn").style.display = "none"; // Cacher le bouton de reset
+  historyList.innerHTML = "";
 }
