@@ -29,7 +29,7 @@ function checkPassword() {
 
   // Ajouter l'essai à l'historique
   let listItem = document.createElement("li");
-  listItem.textContent = `💲 ${guess}`;
+  listItem.textContent = `🗝️ ${guess}`;
   historyList.appendChild(listItem);
 
   if (guess === password) {
