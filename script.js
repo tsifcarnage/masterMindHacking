@@ -1,6 +1,6 @@
 let password;
 let attempts;
-
+let historyList = document.getElementById("history-list");
 //Fonction pour générer un nouveau mot de passe
 function generatePassword() {
   password = Array.from({ length: 4 }, () =>
@@ -26,6 +26,11 @@ function checkPassword() {
       "<p style='color:red;'>⚠️ Entrez un code de 4 chiffres !</p>";
     return;
   }
+
+  // Ajouter l'essai à l'historique
+  let listItem = document.createElement("li");
+  listItem.textContent = `💲 ${guess}`;
+  historyList.appendChild(listItem);
 
   if (guess === password) {
     feedback.innerHTML =
