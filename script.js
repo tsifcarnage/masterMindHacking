@@ -1,7 +1,7 @@
 let password;
 let attempts;
 
-// Fonction pour générer un nouveau mot de passe
+//Fonction pour générer un nouveau mot de passe
 function generatePassword() {
   password = Array.from({ length: 4 }, () =>
     Math.floor(Math.random() * 10)
@@ -19,7 +19,8 @@ function checkPassword() {
   let feedback = document.getElementById("feedback");
   let remaining = document.getElementById("remaining");
   let submitBtn = document.getElementById("submit-btn");
-
+  let termaBank = document.getElementById("termaBank");
+  let termaMdp = document.getElementById("termaMdp");
   if (guess.length !== 4 || isNaN(guess)) {
     feedback.innerHTML =
       "<p style='color:red;'>⚠️ Entrez un code de 4 chiffres !</p>";
@@ -29,6 +30,8 @@ function checkPassword() {
   if (guess === password) {
     feedback.innerHTML =
       "<p style='color:lime;'>✅ ACCÈS AUTORISÉ ! COFFRE DÉVERROUILLÉ ! 💰</p>";
+    termaBank.innerHTML = "Accès au coffre de la banque sécurisé 🔓";
+    termaMdp.style.display = "none";
     document.getElementById("guess").disabled = true;
     submitBtn.disabled = true;
     return;
