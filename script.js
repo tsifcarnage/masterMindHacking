@@ -35,6 +35,7 @@ function checkPassword() {
   if (guess === password) {
     feedback.innerHTML =
       "<p style='color:lime;'>✅ ACCÈS AUTORISÉ ! COFFRE DÉVERROUILLÉ ! 💰</p>";
+    document.getElementById("new-btn").style.display = "block"; // Afficher le bouton "new"
     termaBank.innerHTML = "Accès au coffre de la banque sécurisé 🔓";
     termaMdp.style.display = "none";
     document.getElementById("guess").disabled = true;
@@ -89,5 +90,6 @@ function resetGame() {
   document.getElementById("submit-btn").disabled = false;
   document.getElementById("feedback").innerHTML = "";
   document.getElementById("retry-btn").style.display = "none"; // Cacher le bouton de reset
+  document.getElementById("new-btn").style.display = "none";
   historyList.innerHTML = "";
 }

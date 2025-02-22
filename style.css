@@ -94,6 +94,17 @@ button:disabled {
 #retry-btn:hover {
   background: darkred;
 }
+/* Bouton de nouvelle Hack */
+#new-btn {
+  background: green;
+  border: 1px solid green;
+  color: white;
+  display: none;
+}
+
+#new-btn:hover {
+  background: darkgreen;
+}
 
 /* Feedback */
 #feedback {
