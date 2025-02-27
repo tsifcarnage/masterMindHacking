@@ -27,11 +27,6 @@ function checkPassword() {
     return;
   }
 
-  // Ajouter l'essai à l'historique
-  let listItem = document.createElement("li");
-  listItem.textContent = `🗝️ ${guess}`;
-  historyList.appendChild(listItem);
-
   if (guess === password) {
     feedback.innerHTML =
       "<p style='color:lime;'>✅ ACCÈS AUTORISÉ ! COFFRE DÉVERROUILLÉ ! 💰</p>";
@@ -66,6 +61,10 @@ function checkPassword() {
       passArray[index] = null;
     }
   }
+  // Ajouter l'essai à l'historique
+  let listItem = document.createElement("li");
+  listItem.textContent = `🗝️ ${guess} - bien placés: ${correct},- mal placés: ${misplaced}`;
+  historyList.appendChild(listItem);
 
   attempts--;
   remaining.innerText = attempts;
@@ -75,6 +74,7 @@ function checkPassword() {
       "<p style='color:red;'>⛔ SYSTÈME VERROUILLÉ ! ALERTE ACTIVÉE ! 🚨</p>";
     document.getElementById("guess").disabled = true;
     submitBtn.disabled = true;
+    historyList.innerHTML = `🤡 Le mot de passe est ${password}`;
     document.getElementById("retry-btn").style.display = "block"; // Afficher le bouton "Nouvelle tentative"
     return;
   }
