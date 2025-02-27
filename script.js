@@ -1,7 +1,8 @@
 let password;
 let attempts;
 let historyList = document.getElementById("history-list");
-//Fonction pour générer un nouveau mot de passe
+
+// Fonction pour générer un nouveau mot de passe
 function generatePassword() {
   password = Array.from({ length: 4 }, () =>
     Math.floor(Math.random() * 10)
@@ -21,6 +22,7 @@ function checkPassword() {
   let submitBtn = document.getElementById("submit-btn");
   let termaBank = document.getElementById("termaBank");
   let termaMdp = document.getElementById("termaMdp");
+
   if (guess.length !== 4 || isNaN(guess)) {
     feedback.innerHTML =
       "<p style='color:red;'>⚠️ Entrez un code de 4 chiffres !</p>";
@@ -61,9 +63,12 @@ function checkPassword() {
       passArray[index] = null;
     }
   }
-  // Ajouter l'essai à l'historique
+
+  // Ajouter l'essai à l'historique avec des ronds ⚫ et ⚪
   let listItem = document.createElement("li");
-  listItem.textContent = `🗝️ ${guess} - bien placés: ${correct},- mal placés: ${misplaced}`;
+  listItem.innerHTML = `🗝️ ${guess} - ${"🟢".repeat(correct)}${"⚫".repeat(
+    misplaced
+  )}`;
   historyList.appendChild(listItem);
 
   attempts--;
@@ -79,7 +84,7 @@ function checkPassword() {
     return;
   }
 
-  feedback.innerHTML = `🟢 Chiffres bien placés : ${correct}<br>🟡 Chiffres corrects mais mal placés : ${misplaced}`;
+  feedback.innerHTML = `🟢 Chiffres bien placés : ${correct}<br>⚫ Chiffres corrects mais mal placés : ${misplaced}`;
 }
 
 // Réinitialiser le jeu
